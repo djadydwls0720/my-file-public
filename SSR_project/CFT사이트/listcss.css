@@ -1,0 +1,68 @@
+.background{
+    background:#181818;
+}
+.board{
+    color:white;
+    text-decoration-line:none;
+}
+.colum{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.ID{
+    color:white;
+    font-size:20px;
+    display: flex;
+    justify-content: center;
+}
+.click{
+    text-decoration-line:none;
+    width: 70px;
+    height: 20px;
+    border: 2px solid white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    font-size: 13px;
+    
+}
+.clicks{
+    text-decoration-line:none;
+    width: 70px;
+    height: 20px;
+    border: 2px solid white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    font-size: 13px;
+    
+}
+.button_s{
+    display: flex;
+    
+}

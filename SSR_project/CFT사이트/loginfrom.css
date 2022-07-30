@@ -1,0 +1,101 @@
+.loginfrom{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 600px;
+    height: 400px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin: 10px;
+    border: 2px solid black;
+    display: flex;
+}
+
+.box2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.background{
+    background: #181818;
+}
+
+.join{
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    
+}
+.joinbox{
+    width: 100px;
+    height: 30px;
+    border: 2px solid white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    font-size: 20px;
+    caret-color: white;
+    
+}
+
+.butclass{
+    display: flex;
+}
+.Loginbox{
+    margin: 30px;
+}
+
+.inputbox{
+    width:400px;
+    height:30px;
+    font-size:30px;
+}
+.LOGIN{
+    height: 40px;
+    color: white;
+    font-size: 70px;
+    font-weight: bold;
+    
+}
+.BUTTON_LOGIN{
+    width: 130px;
+    height: 50px;
+    color: white;
+    background-color: #181818;
+    border:none;
+    font-size: 30px;
+}
+.JOIN_LOGIN{
+    color: white;
+    font-size: 30px;
+    text-decoration-line:none;
+    
+}
+.error{
+    font-size: 20px;
+    color:red;
+}

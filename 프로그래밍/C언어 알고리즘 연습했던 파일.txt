@@ -1,0 +1,2331 @@
+#include <stdio.h>
+
+int main() {
+	int a,b=1,c=0,cnt=0;
+	scanf_s("%d", &a);
+	while (1) {
+		for (int i = b; i < a / 2 + 1; i++) {
+			c += i;
+			printf("%d\n", c);
+			if (c == a) {
+				cnt++;
+				c = 0;
+				b=i;
+				break;
+			}
+		}
+	}
+	printf("%d", cnt);
+}
+/*#include <stdio.h>
+
+int f(int a) {
+	if (a == 1) return 1;
+	if (a == 2)return 2;
+	return f(a - 2) + f(a - 1);
+}
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	printf("%d", f(a));
+}
+*/
+
+/*#include <stdio.h>
+
+int g(int a) {
+	if (a < 3) return 0;
+	if (a == 3) return 1;
+	if (a == 4) return 2;
+	return g(a - 1)+g(a-2);
+}
+
+int f(int a) {
+	if (a == 1) return 1;
+	if (a == 2) return 2;
+	return f(a - 1)+ f(a - 2);
+}
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	printf("%d", f(a)+g(a));
+}*/
+/*#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	char c[100];
+	char a[1000];
+	gets_s(c);
+	gets_s(a);
+	for (int i = 0; a[i] != '\0'; i++) {
+	
+		for (int j = 0; j < 10; j++) {
+			if (c[j] == a[i]) {
+				printf("%d", j);
+				break;
+			}
+			else if (a[i] == ' ') {
+				printf(" ");
+				break;
+			}
+		}
+	}
+}*/
+
+/*#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	char a[100][100];
+	int b,c;
+	scanf_s("%d ", &b);
+
+	for (int i = 0; i < b; i++) {
+		gets_s(a[i]);
+	}
+
+	for (int i = 0; i < b; i++) {
+		c = 0;
+		for (int j = 0; a[i][j] != '\0'; j++) {c++;}
+
+		for (int j = c; j>=0; j--) {
+			printf("%c", a[i][j]);
+		}
+
+		printf("\n");
+	}
+
+
+}*/
+
+/*#include <stdio.h>
+
+int f(int a) {
+	if (a <= 3)return 1;
+	return f(a-1)+f(a-2);
+}
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	printf("%d", f(a+1));
+}*/
+/*#include <stdio.h>
+
+int f(int a) {
+	if (a == 1)return 1;
+	return 2 * f(a / 2) + ((a + 1) / 2) * ((a + 1) / 2);
+}
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	printf("%d",f(a));
+}*/
+/*#include <stdio.h>
+
+int f(int a) {
+	if (a == 1) return 1;
+	return 2 * f(a - 1) + 1;
+}
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	printf("%d", f(a));
+}*/
+/*#include <stdio.h>
+
+int f(int a) {
+	if (a == 1) return 1;
+	return f(a-1) + a;
+}// H1=1     H2=3     H3=7      H4=11
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	printf("%d", f(a));
+}*/
+/*#include <stdio.h>
+#include <stdlib.h>
+int main() {
+	char a[100];
+	gets_s(a);
+	
+	for (int i = 0; a[i] != '\0'; i++) {
+		if (a[i] == 't') {
+			printf("%d ", i+1);
+		}
+	}
+}*/
+/*#include <stdio.h>
+
+int main() {
+	int a,cnt=0,b;
+	scanf_s("%d", &a);
+	
+	while (1) {
+
+		if (a == 1) break;
+
+		else if ((a-1) % 3 == 0) {
+
+		}
+	}
+	printf("%d", cnt);
+}*/
+/*#include <stdio.h>
+
+int main() {
+	int a,b[100],c[100];
+	scanf_s("%d", &a);
+
+	for (int i = 0; i < a; i++) {
+		scanf_s("%d%d", &b[i],&c[i]);
+	}
+
+	for (int i = 0; i < a; i++) {
+		for (int j = 0; j < a; j++) {
+			if (b[i] < b[j]) {
+				int d = b[i];
+
+				int e = c[i];
+
+				b[i] = b[j];
+				b[j] = d;
+
+				c[i] = c[j];
+				c[j] = e;
+			}
+		}
+	}
+	for (int i = 0; i < a; i++) {
+		printf("%d %d\n", b[i], c[i]);
+	}
+}*/
+/*#include <stdio.h>
+
+int main() {
+	int a, b,a1[1000],b1[1000],tmi=0;
+	scanf_s("%d%d", &a,&b);
+
+	for (int i = 0; i < a; i++) {
+		scanf_s("%d", &a1[i]);
+	}
+
+	for (int i = 0; i < b; i++) {
+		scanf_s("%d", &b1[i]);
+	}
+
+	for (int i = 0; i < b; i++) {
+		a1[i + a] = b1[i];
+	}
+
+	for (int i = 0; i < b + a; i++) {
+		for (int j = 0; j < b + a; j++) {
+			if (a1[i] < a1[j]) {
+				tmi = a1[j];
+				a1[j] = a1[i];
+				a1[i] = tmi;
+			}
+		}
+	}
+	for (int i = 0; i < b+a; i++) {
+		printf("%d ", a1[i]);
+	}
+
+	
+}*/
+/*#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	char a[100];
+	gets_s(a);
+	int b = 0;
+
+	for (int i = 0; a[i] != '\0'; i++) {
+		b++; 
+	}
+
+	for (int i = 0; a[i] != '\0'; i++) {
+		printf("%c", a[b-i-1]);
+	}
+
+}*/
+/*#include <stdio.h>
+
+void g1(int b, int a) {
+	if (b == 0)return;
+	printf(" ");
+	g1(b - 1, a);
+	return;
+}
+
+void f1(int a, int b) {
+	if (b == a)return;
+	f1(a, b + 1);
+	g1(b, a);
+	printf("*\n");
+	return;
+
+}
+
+void g(int a) {
+	if (a == 1) return;
+	printf(" ");
+	g(a - 1);
+}
+
+void f(int a) {
+	if (a == 0) return;
+	f(a - 1);
+	g(a);
+	printf("*\n");
+	return;
+}
+
+int main() {
+	int a,b;
+	scanf_s("%d%d", &a,&b);
+	for (int i = 0; i < b; i++) {
+		f(a);
+		f1(a-1,0);
+	}
+}*/
+/*#include <stdio.h>
+#include <stdlib.h>
+int main() {
+	char a[1000];
+	int b[26];
+	for (int i = 0; i < 26; i++) {
+		b[i] = 0;
+	}
+
+	gets_s(a);
+	for (int i = 0; a[i]!='\0'; i++) {
+		if (a[i]>96&&a[i]<123) {
+			b[a[i] - 97]++;
+		}
+	}
+	for (int i = 0; i < 26; i++) {
+		printf("%c:%d\n", i+97,b[i]);
+	}
+}*/
+
+/*#include <stdio.h>
+
+int n, m, x;
+
+int max(int p, int q) { return p >= q ? p : q; }
+
+int mid(int p, int q, int x) { return x < q && x > p || x < p&& x > q ?; }
+
+int min(int p, int q) { return p < q ? p : q; }
+// 이 부분에 들어가야 될 코드를 작성하여 제출
+int main()
+{
+	scanf_s("%d%d%d", &n, &m, &x);
+	printf("%d\n", mid(n, m, x));
+}*/
+/*#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	char a[10];
+	gets_s(a);
+	printf("%s", a);
+}
+*/
+/*#include <stdio.h>
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	for (int i = 1; i <= 6; i++) {
+		for (int j = 1; j <= 6; j++) {
+			if (i + j == a) {
+				printf("%d %d\n", i, j);
+			}
+		}
+	}
+}*/
+/*#include <stdio.h>
+
+int gcd(int p, int q) { if (p == 0) return q; return gcd(q % p, p); }
+
+long long int lcm(long long int a, long long int b) {
+	
+	long long int c = (a*b)/gcd(a, b);
+	return c;
+}
+
+int main()
+{
+	int a, b;
+	scanf_s("%d%d", &a, &b);
+	printf("%lld\n", lcm(a, b));
+}
+*/
+/*#include <stdio.h>
+#include <stdlib.h>
+int main() {
+	char a[10000];
+	gets_s(a);
+	int b = 0, c = 0;
+	for (int i = 0; a[i] != '\0'; i++) {
+		if (a[i] == '(') b++;
+		else if (a[i] == ')') c++;
+	}
+	printf("%d %d", b, c);
+}*/
+
+/*#include <stdio.h>
+
+int main() {
+	double a, b, c, d;
+	scanf_s("%lf%lf%lf%lf", &a,&b,&c,&d);
+
+	if (a / b < c / d) printf("<");
+	else if (a / b > c / d) printf(">");
+	else if (a / b == c / d) printf("=");
+}*/
+/*#include <stdio.h>
+
+int f(int a, int b) {
+	if (b == 1) return a;
+	else if (a == b) return 1;
+	else if (b > a) return 0;
+	return f(a - 1, b - 1) + f(a - 1, b);
+}
+
+int main() {
+	int a,b;
+	scanf_s("%d%d", &a,&b);
+	printf("%d", f(a,b));
+}*/
+/*#include <stdio.h>
+
+int main() {
+	long long int a,b,c,d,plu1=0,btn1=0, plu2 = 0, btn2 = 1;
+	scanf_s("%lld %lld %lld %lld", &a,&b,&c,&d);
+	if (a > c || b > d) { 
+		printf("-1");
+		return 0; 
+	}
+	if (d % b != c % a) { 
+		printf("-1"); 
+		return 0;
+	}
+	while (1) {
+		if (c % (a + plu1) == 0 && d % (b + plu1) == 0) {
+			btn1=(c / (a + plu1)) / 2;
+			break;
+		}
+		plu1++;
+	}
+	printf("%lld %lld\n", plu1, btn1);
+
+	while (1) {
+		if (c % (a * btn2)) {
+			plu2 = c % (a * btn2);
+			break;
+		}
+		btn2++;
+	}
+	printf("%lld %lld\n", plu2, btn2);
+	if (plu1 + btn1 < plu2 + btn2) {
+		printf("%d", plu1 + btn1);
+		return 0;
+	}
+	if (plu1 + btn1 > plu2 + btn2) {
+		printf("%lld", plu2 + btn2);
+		return 0;
+	}
+	printf("%lld", plu2 + btn2);
+	return 0;
+}*/
+
+/*#include <stdio.h>
+
+int f(int a) {
+	if (a == 1)return 1;
+	else if (a == 2)return 3;
+	else if (a == 3) return 7;
+	return f(a - 1) + f(a - 2) + f(a - 3);
+}
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	printf("%d",f(a));
+}*/
+/*#include <stdio.h>
+
+int f(int a, int b) {
+	if (b == 1) return a;
+	else if (a == b) return 1;
+	else if (a < b) return 0;
+
+	return f(a - 1, b - 1) + f(a - 1, b);
+}
+
+int main() {
+	int a,b;
+	scanf_s("%d%d", &a,&b);
+	printf("%d",f(a,b));
+}*/
+/*#include <stdio.h>
+
+int f(int n)
+{
+	if (n == 1) return 1;
+	else if (n == 2) return 2;
+	else if (n == 3) return 4;
+
+	return f(n - 1) + f(n - 2) + f(n - 3);
+}
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	printf("%d", f(a));
+}*/
+/*#include <stdio.h>
+
+int f(int a) {
+	if (a <= 1) return 1;
+	else if (a == 2) return 2;
+	else return (f(a/2)*f((a+1)/2)+f(a/2-1)*f((a+1)/2-1))%1000;
+
+}
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	printf("%d", f(a));
+}*/
+/*
+#include <stdio.h>
+
+int f(int a) {
+	if (a == 1) return 1;
+	else if (a == 2) return 2;
+	else return (f(a - 1) + f(a - 2));
+
+}
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	printf("%d",f(a));
+}*/
+/*
+#include <stdio.h>
+
+int f(int a) {
+	if (a <= 2) return 1;
+	return f(a - 1) + f(a - 2);
+}
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	printf("%d",f(a));
+}*/
+/*#include <stdio.h>
+
+int f(int a, int b) {
+	if (a % b == 0) return b; return f(b, a%b);
+}
+
+int main() {
+	int a, b;
+	scanf_s("%d%d", &a,&b);
+	int c = f(a, b);
+	b /= c;
+	a /= c;
+
+	printf("%d %d", a,b);
+}*/
+/*#include <stdio.h>
+
+void g(int a) {
+	if (a == 0)return;
+	printf("*");
+	g(a - 1);
+}
+
+void f(int a) {
+	if (a == 0) return;
+	f(a - 1);
+	g(a);
+	printf("\n");
+	return;
+}
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	f(a);
+}*/
+
+/*#include <stdio.h>
+
+int b;
+
+void g(int a) {
+	if (a == b) return;
+	printf("*");
+	g(a + 1);
+}
+
+void f(int a) {
+	if (a == 0)return;
+	f(a - 1);
+	g(a);
+	printf("\n");
+	return;
+}
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	b = a+1;
+	f(a);
+}*/
+/*#include <stdio.h>
+
+int b = 0;
+
+int g(int a) {
+	if (a == 0) return 0;
+	g(a - 1);
+	printf("%d ", a);
+}
+
+int f(int a) {
+	if (a==0) return 0;
+	f(a - 1);
+	g(a);
+	printf("\n");
+	return 0;
+}
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	b = a;
+	f(a);
+}*/
+/*#include <stdio.h>
+
+void g(int a) {
+	if (a == 0) return;
+	printf("*");
+	g(a - 1);
+}
+
+void f(int a) {
+	if (a <= 0) return;
+	f(a - 1);
+	g(a);
+	printf("\n");
+	return;
+}
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	f(a);
+}*/
+/*#include <stdio.h>
+#include <math.h>
+int main() {
+	long long int a, b;
+	scanf_s("%lld%lld", &a,&b);
+	printf("%.0lf", pow(a,b));
+}*/
+/*#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	long double a, b,c;
+	char d[100000];
+	scanf_s("%lf%lf", &a,&b);
+	_itoa_s(a / b*10000000000,d,10);
+	printf("%s", d);
+}
+*/
+/*#include <stdio.h>
+
+int main() {
+	int a[9][9],c=0;
+	for (int i = 1; i <= 7; i++) {
+		for (int j = 1; j <= 7; j++) {
+			scanf_s("%d", &a[i][j]);
+		}
+	}
+
+	for (int i = 1; i <= 7; i++) {
+		for (int j = 1; j <= 7; j++) {
+			if (a[i][j] != 0) {
+				if (a[i][j] == a[i][j + 1] && a[i][j] == a[i][j - 1]) {
+					c++;
+					a[i][j] = 0;
+					a[i][j + 1] = 0;
+					a[i][j - 1] = 0;
+					printf("(%d,%d) (%d,%d) (%d,%d)\n", i, j,i,j+1,i,j-1);
+				}
+
+				else if (a[i + 1][j] == a[i][j] && a[i][j] == a[i - 1][j]) {
+					c++;
+					a[i][j] = 0;
+					a[i + 1][j] = 0;
+					a[i - 1][j] = 0;
+					printf("(%d,%d) (%d,%d) (%d,%d)\n", i, j, i+1, j, i-1, j);
+				}
+				else if (a[i][j] == a[i][j - 1] && a[i][j] == a[i + 1][j]) {
+					c++;
+					a[i][j] = 0;
+					a[i][j - 1] = 0;
+					a[i + 1][j] = 0;
+					printf("(%d,%d) (%d,%d) (%d,%d)\n", i, j, i, j - 1, i+1, j);
+				}
+				else if (a[i][j] == a[i][j - 1] && a[i][j] == a[i - 1][j]) {
+					c++;
+					a[i][j - 1] = 0;
+					a[i - 1][j] = 0;
+					a[i][j] = 0;
+					printf("(%d,%d) (%d,%d) (%d,%d)\n", i, j, i-1, j, i, j - 1);
+				}
+				else if (a[i][j] == a[i][j + 1] && a[i][j] == a[i - 1][j]) {
+					c++;
+					a[i][j + 1] = 0;
+					a[i - 1][j] = 0;
+					a[i][j] = 0;
+					printf("(%d,%d) (%d,%d) (%d,%d)\n", i, j, i-1, j, i, j + 1);
+				}
+				else if (a[i][j] == a[i][j + 1] && a[i][j] == a[i + 1][j]) {
+					c++;
+					a[i][j + 1] = 0;
+					a[i + 1][j] = 0;
+					a[i][j] = 0;
+					printf("(%d,%d) (%d,%d) (%d,%d)\n", i, j, i, j + 1, i+1, j);
+				}
+
+			}
+		}
+		
+	}
+	for (int i = 1; i <= 7; i++) {
+		for (int j = 1; j <= 7; j++) {
+			printf("%d ", a[i][j]);
+		}
+		printf("\n");
+	}
+	printf("%d", c);
+}*/
+/*#include <stdio.h>
+#include <stdlib.h>
+
+int f(int a, int b) {
+	if (a==0) return b;
+
+	return f(b % a, a);
+}
+
+int main() {
+	char a[11];
+	int b = 10;\
+
+	scanf_s("0.%s", &a, sizeof(a));
+	int c = atoi(a);
+	
+	for (int i = 1; a[i] != '\0'; i++) {
+		b *= 10;
+	}
+	int d = f(c, b);
+	while (d!=1) {
+		if (b % d==0 && c % d==0) {
+			b /= d;
+			c /= d;
+		}
+		else {
+			break;
+		}
+	}
+	printf("%d %d", c,b);
+}*/
+/*#include <stdio.h>
+
+int main() {
+	char a[10][10];
+	int point[10];
+	for (int i = 0; i < 10; i++) {
+		scanf_s("%d", &point[i]);
+	}
+	for (int i = 0; i < 10; i++) {
+		for (int j = 0; j < 10; j++) {
+			a[i][j] = ' ';
+		}
+	}
+
+	for (int i = 0; i < 10; i++) {
+		for (int j = 10; j <= point[i]; j+=10) {
+			a[9-(j/10 - 1)][i]='#';
+		}
+	}
+	for (int i = 0; i < 10; i++) {
+		for (int j = 0; j < 10; j++) {
+			printf("%c ", a[i][j]);
+		}
+		printf("\n");
+	}
+}*/
+
+
+/*#include <stdio.h>
+
+int f(int a) {
+	if (a <= 2) return 1;
+	return f(a - 1) + f(a - 2);
+}
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	printf("%d",f(a));
+}*/
+/*#include <stdio.h>
+
+int g(int k) {
+	if (k <= 0) return 0;
+	g(k - 1);
+	printf("*");
+}
+
+int f(int a) {
+	if (a <= 0) return 0;
+	f(a - 1);
+	g(a);
+	printf("\n");
+	return 0;
+}
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	f(a);
+}*/
+/*#include <stdio.h>
+
+int f(int a) {
+	if (a == 1) {
+		return 1;
+	}
+
+	else if (a == 2) {
+		return 1 + f(1);
+	}
+
+	else if (a == 3) {
+		return 1 + f(1) + f(2);
+	}
+
+	else {
+		return f(a - 3) + f(a - 2) + f(a - 1);
+	}
+}
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	printf("%d", f(a));
+}*/
+
+/*#include <stdio.h>
+
+int main() {
+	char a[1000];
+	int b = 0;
+	gets_s(a);
+	for (int i = 0; a[i] != '\0'; i++) {
+		b++;
+	}
+	printf("%d", b);
+}*/
+/*#include <stdio.h>
+
+int f(int a) {
+
+}
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	f(a);
+}
+*/
+/*#include <stdio.h>
+
+long long int f(int a) {
+	if (a <= 2) return 1;
+	return f(a -2)+f(a-1);
+}
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+	printf("%lld", f(a));
+}*/
+/*#include <stdio.h>
+
+int b = 0;
+
+int f(char a[1000], int c) {
+	if (a[c] == '\0') {
+		printf("%d", b);
+		return 0;
+	}
+	b += a[c] - 48;
+	return f(a,c+1);
+}
+
+int main() {
+	int c = 0;
+	char a[1000];
+	gets_s(a);
+	f(a,c);
+}*/
+/*#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	char a[600];
+	int sum=0;
+	gets_s(a);
+	for (int i = 0; a[i] != '\0'; i++) {
+		sum += a[i] - 48;
+	}
+	if (sum % 3 == 0) {
+		printf("1");
+		return 0;
+	}
+	printf("0");
+	return 0;
+}*/
+/*#include <stdio.h>
+
+double circle(int r) {
+	return r * r * 3.14;
+}
+
+int main()
+{
+	int r;
+	scanf_s("%d", &r);
+	printf("%.2f", circle(r));
+}*/
+/*#include <stdio.h>
+
+int gcd(int p, int q) { if (p == 0) return q; printf("%d %d\n", p,q); return gcd(q % p, p); }
+
+// 이 부분에 들어가야 될 코드를 작성하여 제출
+
+long long int lcm(int a, int b) {
+	long long int c=gcd(a, b);
+	return c*c;
+}
+
+int main()
+{
+	int a, b;
+	scanf_s("%d%d", &a, &b);
+	printf("%lld\n", lcm(a, b));
+}*/
+/*#include <stdio.h>
+
+int n, d[100010], k;
+
+int f(int k) {
+	for (int i = 0; i < n; i++) {
+		if (d[i] == k) {
+			return i;
+		}
+	}
+	return -1;
+}
+
+// 이 부분에 들어가야 될 코드를 작성하여 제출
+int main()
+{
+	scanf_s("%d", &n);
+
+	for (int i = 1; i <= n; i++)
+		scanf_s("%d", &d[i]);
+
+	scanf_s("%d", &k);
+	printf("%d\n", f(k));
+}*/
+/*#include <stdio.h>
+
+int main() {
+
+	char c;
+	scanf_s("%c", &c);
+
+	int a[4][4];
+
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			scanf_s("%d", &a[i][j]);
+		}
+	}
+
+	if (c == 'U') {
+
+		for (int i = 3; i >= 0; i--) {
+			for (int j = 3; j >= 0; j--) {
+				if (a[j][i] == a[j - 1][i] || a[j - 1][i] == 0) {
+					a[j - 1][i] += a[j][i];
+					a[j][i] = 0;
+
+				}
+			}
+		}
+		for (int i = 3; i >= 0; i--) {
+			for (int j = 3; j >= 0; j--) {
+				if (a[j - 1][i] == 0) {
+					a[j - 1][i] += a[j][i];
+					a[j][i] = 0;
+
+				}
+			}
+		}
+
+	}
+	if (c == 'R') {
+
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				if (a[i][j] == a[i][j+1] || a[i][j+1] == 0) {
+					a[i][j+1] += a[i][j];
+					a[i][j] = 0;
+
+				}
+			}
+		}
+
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				if (a[i][j+1] == 0) {
+					a[i][j+1] += a[i][j];
+					a[i][j] = 0;
+
+				}
+			}
+		}
+
+
+	}
+
+	if (c == 'L') {
+
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				if (a[i][j] == a[i][j - 1] || a[i][j - 1] == 0) {
+					a[i][j - 1] += a[i][j];
+					a[i][j] = 0;
+
+				}
+			}
+		}
+
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				if (a[i][j + 1] == 0) {
+					a[i][j + 1] += a[i][j];
+					a[i][j] = 0;
+
+				}
+			}
+		}
+
+	}
+
+
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			printf("%d ", a[i][j]);
+
+		}
+		printf("\n");
+	}
+
+}*/
+/*#include <stdio.h>
+
+int main() {
+	int a, b, c, d, s, x1=0,x2=0,cnt=0;
+
+	scanf_s("%d%d%d%d%d", &a, &b, &c, &d, &s);
+
+	while (1) {
+		if (cnt < s) {
+			cnt += a;
+			if (cnt <= s) {
+				x1 += a;
+			}
+
+			else {
+				cnt -= a;
+				x1+= s - cnt;
+				break;
+			}
+
+		}
+		else {
+			break;
+		}
+
+		if (cnt < s) {
+			cnt += b;
+			if (cnt <= s) {
+				x1 -= b;
+			}
+
+			else {
+				cnt -= b;
+				x1 -= s - cnt;
+				break;
+			}
+		}
+		else {
+			break;
+		}
+
+	}
+	cnt = 0;
+
+	while (1) {
+		if (cnt < s) {
+			cnt += c;
+			if (cnt <= s) {
+				x2 += c;
+			}
+
+			else {
+				cnt -= c;
+				x2 += s-cnt;
+				break;
+			}
+		}
+		else {
+			break;
+		}
+
+		if (cnt < s) {
+			cnt += d;
+			if (cnt <= s) {
+				x2 -= d;
+			}
+
+			else {
+				cnt -= d;
+				x2 -= s - cnt;
+				break;
+			}
+		}
+		else {
+			break;
+		}
+
+	}
+
+	if (x1 < x2) {
+		printf("Byron");
+		
+	}
+	else if (x1>x2) {
+		printf("Nikky");
+		
+	}
+	else {
+		printf("Tied");
+	}
+	
+}*/
+/*#include <stdio.h>
+
+int attck(int x1, int x2) {
+	x1 -= x2;
+	return x1;
+}
+
+int main() {
+	int p_hp = 0, a, p_attck, posin, attck_up=0, turn = 0, aha_hp, apa_attck, tun = 1;
+	char buff[4];
+
+	for (int i = 0; i < 4; i++) {
+		scanf_s("%d", &a);
+		p_hp += a;
+	}
+	printf("체력 완료");
+
+	scanf_s("%d%d", &p_attck, &posin);
+
+	if (posin == 1) {
+		gets_s(buff);
+
+
+		if (buff[0] == '*') {
+			p_attck *= attck_up;
+
+		}
+
+		else {
+			p_attck += attck_up;
+
+		}
+	}
+
+	scanf_s("%d%d", &aha_hp,&apa_attck);
+
+	while (1) {
+		if (posin == 1) {
+			if (turn <= 0) {
+				if (buff[0] == '*') {
+					p_attck /= attck_up;
+
+				}
+				else {
+					p_attck -= attck_up;
+
+				}
+				
+			}
+		}
+
+		if (tun % 2 == 1) {
+			aha_hp=attck(aha_hp, p_attck);
+			if (aha_hp <= 0) {
+				printf("1");
+				return 0;
+			}
+		}
+
+		else {
+			p_hp = attck(p_hp, apa_attck);
+			if (p_hp <= 0) {
+				printf("0");
+				return 0;
+			}
+
+		}
+		turn--;
+		tun++;
+	}
+
+}*/
+/*#include <stdio.h>
+#include <math.h>
+int main() {
+	long int a, b, i, c=0,x;
+	scanf_s("%ld%ld", &a,&b);
+	for (i = 1; pow(i, b)<=a; i++) {
+		printf("%ld^%ld = %f\n", i, b, pow(i, b));
+		c = pow(i, b);
+		if (c == a) {
+			printf("%f == %f \n", pow(i, b), pow(i, b));
+			printf("%ld", i);
+			return 0;
+		}
+	}
+
+	x = pow(i + 1, b);
+	if (x - a < 0) {
+		x -=a;
+		x *= -1;
+	}
+
+	if (x <! (c-a)) {
+		printf("%lf < %lf \n", pow(i, b), pow(i+1, b));
+		printf("%ld", i+1);
+	}
+	else {
+
+		printf("%lf > %lf \n", pow(i, b), pow(i + 1, b));
+		printf("%ld", i);
+	}
+}*/
+/*#include <stdio.h>
+int main() {
+	int a, b[100],c=0;
+	scanf_s("%d", &a);
+	for (int i = 0; i < a; i++) {
+		scanf_s("%d", &b[i]);
+	}
+
+	for (int i = 0; i < a-1; i++) {
+		if (b[i] < b[i+1]) {
+			c++;
+		}
+	}
+
+	if (c == a - 1) {
+		printf("오름차순");
+		return 0;
+	}
+
+	if (c == 0) {
+		printf("내림차순");
+		return 0;
+	}
+	else {
+		printf("섞임");
+	}
+}*/
+
+/*#include <stdio.h>
+
+
+int main() {
+	int a,n, b[19][19],c=0,x=0,y=0,p=0,max=0;
+	scanf_s("%d%d",&a,&n);
+
+	if (3 == n) {
+		p = 1;
+	}
+	else {
+		p = 2;
+	}
+	for (int i = 0; i < 19; i++) {
+		for (int j = 0; j < 19; j++) {
+			b[i][j] = 2;
+		}
+	}
+
+	for (int i = 0; i < a; i++) {
+		for (int j = 0; j < a; j++) {
+			scanf_s("%d", &b[i+2][j+2]);
+		}
+	}
+
+	for (int i = 0; i < a; i++) {
+		for (int j = 0; j < a; j++) {
+			
+
+			if (b[i+2][j+2]==0) {
+				c = 0;
+				if (b[i +2- 1][j + 2] == 1 && b[i + 2][j + 2 - 1] == 1 && b[i + 2][j + 1 + 2] == 1 &&  b[i + 1 + 2][j + 2] == 1&& b[i - 1 + 2][j-1 + 2] == 1 && b[i+1 + 2][j - 1 + 2] == 1 && b[i+1 + 2][j + 1 + 2] == 1 && b[i - 1 + 2][j+1 + 2] == 1)
+				{
+					break;
+				}
+				if (b[i - 1 + 2][j + 2] == 1 && b[i + 2][j - 1 + 2] == 2 && b[i + 2][j + 1 + 2] == 1 && b[i + 1 + 2][j + 2] == 1 && b[i+1 + 2][j + 1 + 2] == 1 && b[i -1 + 2][j+1 + 2] == 1)
+				{
+					break;
+				}
+				if (b[i - 1 + 2][j + 2] == 2 && b[i + 2][j - 1 + 2] == 1 && b[i + 2][j + 1 + 2] == 1 && b[i + 1 + 2][j] == 1 && b[i+1 + 2][j -1 + 2] == 1 && b[i + 1 + 2][j+1 + 2] == 1)
+				{
+					break;
+				}
+				if (b[i - 1 + 2][j + 2] == 1 && b[i + 2][j - 1 + 2] == 1 && b[i + 2][j + 1 + 2] == 2 && b[i + 1 + 2][j + 2] == 1 &&  b[i-1 + 2][j -1 + 2] == 1 && b[i + 1 + 2][j-1 + 2] == 1)
+				{
+					break;
+				}
+				if (b[i - 1 + 2][j + 2] == 1 && b[i + 2][j - 1 + 2] == 1 && b[i + 2][j + 1 + 2] == 1 && b[i + 1 + 2][j + 2] == 2 && b[i-1 + 2][j-1 + 2] == 1 && b[i - 1 + 2][j+1 + 2] == 1)
+				{
+					break;
+				}
+				
+				for (int i1 = 0; i1 < n; i1++) {
+					for (int j1 = 0; j1 < n; j1++) {
+						if (b[i - p + i1 + 2][j - p + j1 + 2] == 1) {
+							c++;
+						}
+					}
+				}
+				if (max < c) {
+					max = c;
+					x = i;
+					y = j;
+				}
+
+
+
+			}
+		}
+		}
+
+	if (max == 0) {
+		printf("119");
+		return 0;
+
+	}
+	printf("%d %d", x+1, y+1);
+
+}
+*/
+/*#include <stdio.h>
+
+int alio(int tmp) {
+	int cnt = 0;
+
+	if (tmp == 1) return 1;
+
+	for (int i = 1; i < tmp / 2; i++) {
+		if (tmp % i == 0) {
+
+			if (i > (tmp / i)) {
+				break;
+			}
+			if(tmp/i==i){
+				cnt++;
+			}
+			else {
+				cnt+=2;
+			}
+		}
+	}
+	
+	return cnt;
+}
+
+int main() {
+	int a;
+	int tmp = 1;
+	int num = 2;
+	scanf_s("%d", &a);
+
+	while (alio(tmp) <= a) {
+		tmp += num;
+		num++;
+	}
+
+	printf("%d", tmp);
+ }*/
+/*int for1;
+
+
+int Ali(int num) {
+	int cnt = 0;
+	int tmp = 0;
+
+
+	if (num == 1) return 1;
+
+	for (int i = 1; i <= num / 2; i++) {//1차 for
+		if (num % i == 0) {//약수 판별
+
+			
+			if (i > (num / i)) {
+			break;
+			}
+
+
+
+			if ((num / i) == i) {
+				printf("%d == (%d / %d)\n", i, num, i);
+				cnt++;
+			}
+
+			else {
+				cnt += 2;
+			}
+		}
+	}
+	return cnt;
+}
+/*
+int main() {
+	int a;
+	int cnt;
+	scanf_s("%d", &a);
+	for (int i = 1; i <= a / 2; i++) {
+		if (a % i == 0) {
+			cnt++;
+		}
+	}
+}
+*/
+/*
+int main() {
+	int num;
+	int tmp = 1;
+	int i = 2;
+
+	int v = 0;
+
+	scanf_s("%d", &num);
+
+
+	while (Ali(tmp) <= num) {
+
+		tmp += i;
+		i++;
+
+		v++;
+	}
+	printf("%d\n", tmp);
+
+
+}
+*/
+
+/*#include <stdio.h>
+int main() {
+	int a,b[1000],c=0;
+	scanf_s("%d", &a);
+	b[0] = 0;
+	b[a] = 0;
+	for (int i = 1; i <= a; i++) {
+		scanf_s("%d", &b[i]);
+	}
+	for (int i = 1; i <= a; i++) {
+		if (b[i] == 0) {
+			if (b[i - 1] != 1 && b[i + 1] != 1) {
+				c++;
+			}
+
+		}
+	}
+	printf("%d", c);
+}*/
+/*#include <stdio.h>
+int main() {
+	int a, b, c;
+	scanf_s("%d%d", &a, &b);
+	c = (a * b)-a;
+	if (c == 0) {
+		c++;
+	}
+
+	for (int i = 0; i < a; i++) {
+		for (int j = 0; j < b; j++) {
+			printf("%d ", c+j);
+			
+		}
+		c -= b;
+		printf("\n");
+	}
+}*/
+/*#include <stdio.h>
+int main() {
+	int a,b, c;
+	scanf_s("%d%d", &a,&b);
+	c = a*b;
+
+	for (int i = 0; i < a; i++) {
+		for (int j = 0; j < b; j++) {
+			printf("%d ", c);
+			c--;
+		}
+		printf("\n");
+	}
+	}*/
+/*#include <stdio.h>
+int main() {
+	int a,c;
+	scanf_s("%d", &a);
+	c = a;
+
+	for (int i = 0; i < a; i++) {
+		for (int j = 0; j < a; j++) {
+			printf("%d ", c + j*a);
+		}
+		c--;
+		printf("\n");
+	}
+}*/
+/*#include <stdio.h>
+int main() {
+	int a,c;
+	scanf_s("%d", &a);
+	c = a;
+	for (int i = 0; i < a; i++) {
+		for (int j = 0; j< a; j++) {
+			printf("%d ",c-j);
+		}
+		c += a;
+		printf("\n");
+	}
+}*/
+/*#include <stdio.h>
+int main() {
+	char window[30][60], name[100];
+	int a,b,x,y,x2,y2;
+	for (int i = 0; i < 30; i++) {
+		for (int j = 0; j < 60; j++) {
+			window[i][j] = '.';
+		}
+
+	}
+	scanf_s("%d", &a);
+	for (int i = 0; i < a; i++) {
+		scanf_s("%s%d%d%d%d",&name,sizeof(name),&x,&y,&x2,&y2);
+
+		for (int i = 0; i < y2 - y; i++) {
+			for (int j = 0; j < x2 - x; j++) {
+				window[y + i][x + j] = ' ';
+
+			}
+		}
+
+		window[y - 1][x - 1] = '+';
+		window[y - 1][x2- 1] = '+';
+		window[y2 - 1][x - 1] = '+';
+		window[y2-1][x2- 1] = '+';
+
+		for (int i = 0; window[y-1][x+i] != '+'; i++) {
+			window[y - 1][x + i] = '-';
+		}
+
+		for (int i = 0; window[y2 - 1][x + i] != '+'; i++) {
+			window[y2 - 1][x + i] = '-';
+		}
+		
+		for (int i = 0; window[y +i][x-1] != '+'; i++) {
+			window[y +i][x -1] = '|';
+		}
+		
+		for (int i = 0; window[y+i][x2 -1] != '+'; i++) {
+			window[y +i][x2 -1] = '|';
+		}
+		
+
+		for (int i = 0; name[i] != '\0'; i++) {
+			window[y - 1][x+i] = name[i];
+		}
+
+		
+	}
+	for (int i = 0; i < 30; i++) {
+		for (int j = 0; j < 60; j++) {
+			printf("%c", window[i][j]);
+		}
+		printf("\n");
+
+	}
+}*/
+/*#include <stdio.h>
+int main() {
+	int a,c=1,d[100][100],b=1;
+	scanf_s("%d", &a);
+	for (int i = 0; i < a; i++) {
+		if (b % 2 == 1) {
+			for (int j = a-1 ; j >= 0; j--) {
+				d[j][i] = c;
+				c++;
+			}
+			b++;
+		}
+
+		else {
+			for (int j = 0; j < a; j++) {
+				d[j][i] = c;
+				c++;
+			}
+			b++;
+		}
+	}
+	for (int i = 0; i < a; i++) {
+		for (int j = 0; j < a; j++) {
+			printf("%d ", d[i][j]);
+		}
+		printf("\n");
+
+	}
+}*/
+/*#include <stdio.h>
+int main() {
+	int a, b, c = 1, d[100][100],x=0, y=0;
+	scanf_s("%d%d", &a, &b);
+	for (int i = a - 1; i >= 0; i--) {
+		y = i;
+		x = 0;
+		while (1) {
+			if (x >= b||y>=a) {
+				break;
+			}
+			d[y][x] = c;
+			x++;
+			c++;
+			y++;
+		}
+	}
+	for (int i = 1; i < b; i++) {
+		y = 0;
+		x = i;
+		while (1) {
+			if (x >= b || y >= a) {
+				break;
+			}
+			d[y][x] = c;
+			x++;
+			c++;
+			y++;
+
+		}
+
+	}
+
+
+	for (int i = 0; i < a; i++) {
+		for (int j = 0; j < b; j++) {
+			printf("%d ", d[i][j]);
+		}
+		printf("\n");
+
+	}
+}*/
+/*#include <stdio.h>
+int main() {
+	int a, b=1;
+	scanf_s("%d", &a);
+	for (int i = 0; i < a; i++) {
+		for (int j = 0; j < a; j++) {
+			printf("%d ", b);
+			b++;
+		}
+		printf("\n");
+
+	}
+}*/
+/*#include <stdio.h>
+int main() {
+	char c[100];
+	int a=0, b=0;
+	gets_s(c);
+	for (int i = 0; c[i] != '\0'; i++) {
+		if (c[i] == '(') {
+			a++;
+		}
+		else if(c[i] == ')') {
+			b++;
+		}
+	}
+	printf("%d %d",a,b);
+}*/
+/*#include <stdio.h>
+int main() {
+	char c[100];
+	gets_s(c);
+	for (int i = 0; c[i] != NULL; i++) {
+		printf("%c", c[i]+2);
+	}
+	printf("\n");
+	for (int i = 0; c[i] != NULL; i++) {
+		printf("%c", ((c[i] * 7)%80) + 48);
+	}
+}*/
+/*#include <stdio.h>
+int main() {
+	int a, b[1000];
+	char c[1000][1000];
+	scanf_s("%d", &a);
+	for (int i = 0; i < a; i++) {
+		scanf_s("%d", &b[i]);
+	}
+	for (int i = 0; i < a; i++) {
+		
+		for (int j = 0; j < a; j++) {
+
+			if (i != j) {
+			
+				if (b[i] < b[j]) {
+					c[i][j] = '<';
+				}
+				else if (b[i] == b[j]) {
+					c[i][j] = '=';
+				}
+				else if (b[i] > b[j]) {
+					c[i][j] = '>';
+				}
+
+				}
+				if (b[i] < b[j]) {
+						c[i][j] = '<';
+				}
+				else if (b[i] == b[j]) {
+						c[i][j] = '=';
+				}
+				else if (b[i] > b[j]) {
+						c[i][j] = '>';
+			}
+			
+		}
+	}
+	for (int i = 0; i < a; i++) {
+		printf("%d:", i+1);
+		for (int j = 0; j < a; j++) {
+			if (i != j) {
+				printf(" %c", c[i][j]);
+			}
+		}
+		printf("\n");
+	}
+}*/
+/*#include <stdio.h>
+int main() {
+	int a,b=0;
+	scanf_s("%d", &a);
+
+	for (int i = a; i > 0; i--) {
+		for (int j = i-1; j > 0; j--) {
+			printf(" ");
+		}
+		printf("*");
+		for (int j = 0;  j< b; j++) {
+			printf(" ");
+		}
+		printf("*");
+
+		printf("\n");
+		b+=2;
+	}
+	for (int i = 0; i < a; i++) {
+		for (int j = i; j > 0; j--) {
+			printf(" ");
+		}
+		printf("*");
+		for (int j = 0; j < b-2; j++) {
+			printf(" ");
+		}
+		printf("*");
+
+		printf("\n");
+		b -= 2;
+
+	}
+}*/
+/*#include <stdio.h>
+int main() {
+	int a, b, c[500],cmp;
+	scanf_s("%d%d", &a, &b);
+
+	for (int i = 0; i < 500; i++) {
+		c[i] = 0;
+	}
+	for (int i = 0; i < a+b; i++) {
+		scanf_s("%d", &c[i]);
+	}
+	for (int i = 0; i < a + b; i++) {
+		for (int j = 0; j < a + b; j++) {
+			if (c[i] < c[j]) {
+				cmp = c[j];
+				c[j] = c[i];
+				c[i] = cmp;
+			}
+		}
+	}
+	for (int i = 0; i < a+b; i++) {
+		printf("%d ", c[i]);
+	}
+}*/
+/*#include <stdio.h>
+int main() {
+	int a, b[10],c;
+	for (int i = 0; i < 10; i++) {
+		scanf_s("%d", &b[i]);
+	}
+	for (int i = 0; i < 10; i++) {
+		for (int j = 0; j < 10; j++) {
+			if (b[i] > b[j]) {
+				c = b[j];
+				b[j] = b[i];
+				b[i] = c;
+			}
+		}
+
+	}
+	printf("%d", b[2]);
+}*/
+/*#include <stdio.h>
+int main() {
+	int a, b;
+	char c;
+	scanf_s("%d %d %c", &a, &b, &c);
+	if (c == 'L') {
+		for (int i = 0; i < a; i++) {
+			for (int j = i; j > 0; j--) {
+				printf(" ");
+			}
+			for (int j = 0; j < b; j++) {
+				printf("*");
+			}
+			printf("\n");
+		}
+	}
+
+	else if (c == 'R') {
+		for (int i = a; i > 0; i--) {
+			for (int j = i-1; j > 0; j--) {
+				printf(" ");
+			}
+			for (int j = 0; j < b; j++) {
+				printf("*");
+			}
+			printf("\n");
+		}
+	}
+}*/
+/*#include <stdio.h>
+int main() {
+	int a,b;
+	scanf_s("%d", &a);
+	int max = 0;
+	for (int i = 1; i <= a; i++) {
+		if ((i)*(a - i*2)>max) {
+			b = i;
+			max = (i) * (a - i * 2);
+		}
+	}
+	printf("%d", b);
+}*/
+/*#include <stdio.h>
+int main() {
+	float a;
+	scanf_s("%f", &a);
+	a /= 2;
+	int max = (a / 2) * (a / 2);
+	for (int i = 1; i <= a; i++) {
+		if (i * (a - i) > max) {
+			max = i * (a - i);
+		}
+	}
+	printf("%d", max);
+}*/
+/*#include <stdio.h>
+int main() {
+	int b;
+	float a, c[10];
+	scanf_s("%f%d", &a,&b);
+	float d = a;
+	for (int i = 0; i < b; i++) {
+		scanf_s("%f", &c[i]);
+	}
+
+	for (int i = 0; i < b; i++) {
+		a += a /(100/c[i]);
+		printf("%f%  %  %.0f\n", c[i], a);
+	}
+	printf("%.0f\n", a-d);
+	if (a - d<0) {
+		printf("bad");
+	}
+	else if (a - d > 0) {
+		printf("good");
+	}
+	else {
+		printf("same");
+	}
+}*/
+/*#include <stdio.h>
+int main() {
+	int a, b, c;
+	scanf_s("%d%d%d", &a,&b,&c);
+
+	if (a==b&&b==c&&a==c) {
+		printf("정삼각형");
+		return 0;
+	}
+
+	else if (a + b <= c) {
+		printf("삼각형아님");
+		return 0;
+	}
+
+	else if (a==b||b==c||c==a) {
+		printf("이등변삼각형");
+		return 0;
+	}
+
+	else if (a*a+b*b==c*c) {
+		printf("직각삼각형");
+		return 0;
+	}
+
+	else {
+		printf("삼각형");
+		return 0;
+	}
+}*/
+/*#include <stdio.h>
+int main() {
+	int a[7], b[6],c=0,d=0;
+	for (int i = 0; i < 7; i++) {
+		scanf_s("%d", &a[i]);
+	}
+	for (int i = 0; i < 6; i++) {
+		scanf_s("%d", &b[i]);
+	}
+	for (int i = 0; i < 6; i++) {
+		for (int j = 0; j < 6; j++) {
+			if (b[j] == a[i]) {
+				c++;
+			}
+		}
+		if (b[i] == a[6]) {
+			d++;
+		}
+	}
+	if (c == 6) {
+		printf("1");
+		return 0;
+	}
+	if (c == 5&&d==1) {
+		printf("2");
+		return 0;
+	}
+	if (c == 5) {
+		printf("3");
+		return 0;
+	}
+	if (c == 4) {
+		printf("4");
+		return 0;
+	}
+	if (c == 3) {
+		printf("5");
+		return 0;
+	}
+	if (c <= 2) {
+		printf("0");
+		return 0;
+	}
+}*/
+/*#include <stdio.h>
+int main() {
+	int a, b, c;
+	scanf_s("%d%d%d", &a,&b,&c);
+	if (a>170&& c > 170 && b > 170 ) {
+		printf("PASS");
+		return 0;
+	}
+	printf("CRASH");
+}*/
+/*#include <stdio.h>
+int main() {
+	int a, b, c, d = 0;
+	scanf_s("%d%d%d", &a, &b, &c);
+	d += a + b + c;
+	if (((d % 1000) / 100)%2==1){
+		printf("그럭저럭");
+		return 0;
+	}
+	printf("대박");
+}
+*/
+/*#include <stdio.h>
+#include <math.h>
+int main() {
+	float a, b,c[10];
+	scanf_s("%f%f",&a,&b);
+	c[0] = a + b;
+	c[1] = a - b;
+	c[2] = a * b;
+	c[3] = a / b;
+	c[4] = pow(a,b);
+	c[5] = b + a;
+	c[6] = b - a;
+	c[7] = b * a;
+	c[8] = b / a;
+	c[9] = pow(b, a);
+	float max = c[0];
+	
+	for (int i = 0; i < 10; i++) {
+		if (max < c[i]) {
+			max = c[i];
+		}
+	}
+	printf("%.6f", max);
+
+}*/
+/*#include <stdio.h>
+int main() {
+	int a[3],c;
+	scanf_s("%d%d%d", &a[0], &a[1], &a[2]);
+
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			if (a[i] > a[j]) {
+				c = a[i];
+				a[i] = a[j];
+				a[j] = c;
+			}
+		}
+	}
+	printf("%d", a[1]);
+
+}*/
+/*#include <stdio.h>
+int main() {
+	float a;
+	scanf_s("%f", &a);
+	if (a <= 60 && a >= 50) {
+		printf("win");
+	}
+	else {
+		printf("lose");
+	}
+}*/
+/*#include <stdio.h>
+int main() {
+	int a, b, c;
+	scanf_s("%d%d%d", &a,&b,&c);
+	if (((((a - b + c)%1000)%100)%10)== 0) {
+		printf("대박");
+	}
+	else {
+		printf("그럭저럭");
+	}
+}*/
+/*#include <stdio.h>
+int main() {
+	int a, b;
+	scanf_s("%d%d", &a,&b);
+	if (b < 30) {
+		b = 60 + (b-30);
+		if (a <= 0) {
+			a = 23;
+		}
+		else {
+			a--;
+		}
+	}
+	else {
+		b -= 30;
+	}
+	printf("%d %d", a,b);
+}*/
+/*#include <stdio.h>
+int main() {
+	int a, b;
+	scanf_s("%d%d", &a,&b);
+	if (a % 2==0) {
+		printf("짝수+");
+	}
+	else {
+		printf("홀수+");
+	}
+	if (b % 2 == 0) {
+		printf("짝수=");
+	}
+	else {
+		printf("홀수=");
+	}
+	if ((a + b) % 2 == 0) {
+		printf("짝수");
+		return 0;
+	}
+	printf("홀수");
+}*/
+/*#include <stdio.h>
+int main() {
+	int a, b;
+	scanf_s("%d%d", &a, &b);
+	if (a < b) {
+		printf("%d", b-a);
+		return 0;
+	}
+	printf("%d", a - b);
+}*/
+/*#include <stdio.h>
+int main() {
+	int a, b;
+	scanf_s("%d%d", &a, &b);
+	if (a > b) {
+		printf(">");
+		return 0;
+	}
+	else if (a < b) {
+		printf("<");
+		return 0;
+	}
+	printf("=");
+}
+*/
+/*#include <stdio.h>
+int main() {
+	int a, b, c;
+	scanf_s("%d%d%d", &a,&b,&c);
+
+	printf("%d",a);
+	if (b < 10) {
+		printf("0%d",b);
+	}
+	else {
+		printf("%d",b);
+	}
+	if (c < 100&&c>9) {
+		printf("0%d", c);
+		return 0;
+	}
+	else if(c>99) {
+		printf("%d", c);
+		return 0;
+	}
+	printf("00%d",c);
+}*/
+
+/*#include <stdio.h>
+int main() {
+	int a, b;
+	scanf_s("%d%d", &a,&b);
+	if (a % b == 0) {
+		printf("%d*%d=%d", b,a/b,a);
+		return 0;
+	}
+	else if (b % a == 0) {
+		printf("%d*%d=%d", a, b / a, b);
+		return 0;
+	}
+	printf("none");
+}*/
+/*#include <stdio.h>
+int main() {
+	int a=0,b,c;
+	scanf_s("%d%d", &b, &c);
+	switch (b)
+	{
+	case 1:
+		a += 400;
+		break;
+	case 2:
+		a += 340;
+		break;
+	case 3:
+		a += 170;
+		break;
+	case 4:
+		a += 100;
+		break;
+	case 5:
+		a += 70;
+		break;
+	default:
+		break;
+	}
+	switch (c)
+	{
+	case 1:
+		a += 400;
+		break;
+	case 2:
+		a += 340;
+		break;
+	case 3:
+		a += 170;
+		break;
+	case 4:
+		a += 100;
+		break;
+	case 5:
+		a += 70;
+		break;
+	default:
+		break;
+	}
+	if (500 >= a) {
+		printf("no angry");
+		return 0;
+	}
+	printf("angry");
+}
+*/
+/*#include <stdio.h>
+int main() {
+	int a, b;
+	scanf_s("%d%d", &a, &b);
+	printf("%d\n", (b-a)* ((b - a)>0));
+
+	printf("%d\n", (a / 1000));
+	printf("%d\n", (a % 1000) / 500);
+	printf("%d\n", (a % 1000) / 100);
+	printf("%d\n", ((a % 1000) % 100) / 50);
+	if ((((a % 1000) % 100) / 50)){
+		a -= (((a % 1000) % 100));
+}
+	printf("%d\n", ((a % 1000) % 100) / 10);
+}*/
+
+/*#include <stdio.h>
+int main(){
+	int a, b[100000], c=0;
+	scanf_s("%d", &a);
+	for (int i = 0; i < a; i++) {
+		scanf_s("%d", &b[i]);
+	}
+
+	for (int i = 0; i < a; i++) {
+		for (int j = 0; j < a; j++) {
+
+			if (b[j] > b[i]) {
+				c = b[i];
+				b[i] = b[j];
+				b[j] = c;
+			
+			}
+
+		}
+	}
+	for (int i = 0; i < a; i++) {
+		printf("%d\n", b[i]);
+	}
+}
+*/
+/*#include <stdio.h>
+
+
+int main() {
+	int w, h, w2, h2, a = 1, x = 0, y = 0;
+	char c[1000][1000];
+	scanf_s("%d%d%d%d", &w,&h,&w2,&h2);
+
+	for (int i = 0; i < h; i++) {
+		for (int j = 0; j < w; j++) {
+			c[i][j] = ',';
+		}
+	}
+
+
+	for (int i = 0; i < h; i++) {
+		for (int i2 = 0; i2 < w; i2++) {
+
+			if (a % 2 == 1) {
+				for (int j = 0; j < h2; j++) {
+					for (int j2 = 0; j2 < w2; j2++) {
+						c[y][x] = 'X';
+						printf("X : (%d,%d)\n", x, y);
+						x++;
+					}
+					y++;
+				}
+				a++;
+			}
+
+			else {
+				for (int j = 0; j < h2; j++) {
+					for (int j2 = 0; j2 < w2; j2++) {
+						c[y][x] = '.';
+						printf(". : (%d,%d)\n", x, y);
+						x++;
+					}
+					y++;
+				}
+				a++;
+			}
+
+
+		}
+	}
+	
+	for (int i = 0; i < h; i++) {
+		for (int j = 0; j < w; j++) {
+			printf("%c", c[i][j]);
+		}
+		printf("\n");
+	}
+}*/
